@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import 'tailwindcss';
+@theme {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+
+
+  --color-1: #E5E5EA;
+  --color-2: #6E6E73;
+  --color-3: #6E6E73;
+  --color-4: #CD7F32;
+  --color-5: #8C6239;
+  --color-6: #6F4E37;
+  --color-7: white;
+}
+@custom-variant h-sm (@media (min-height: 670px));
+@custom-variant h-md (@media (min-height: 780px));
+@custom-variant h-lg (@media (min-height: 930px));
+@custom-variant h-xl (@media (min-height: 1060px));
+@custom-variant h-2xl (@media (min-height: 1280px));
+@custom-variant h-3xl (@media (min-height: 1570px));
+
+@layer utilities {
+  .no-scrollbar {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+}
+
+:root {
+  --color-1: #E5E5EA;
+  --color-2: #6E6E73;
+  --color-3: #F5F5F7;
+  --color-4: #CD7F32;
+  --color-5: #A1A1A6;
+  --color-6: #6F4E37;
+  --color-7: red;
+}
+
+html {
+  background-color: var(--color-1);
+}
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+}
+.blur_correction {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: scale(1.05) translateZ(0); 
+  -webkit-transform: scale(1.05) translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  outline: 1px solid transparent; 
+}
