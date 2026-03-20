@@ -33,7 +33,7 @@ function ContactModal({onClose}) {
                     </svg>
                 </button>
 
-                <div className="flex flex-col relative w-full max-w-[80%] rounded-[2.5rem] p-10 shadow-2xl bg-3 text-center">
+                <div className="flex flex-col relative w-full max-w-[80%] lg:max-w-[30%] rounded-[2.5rem] p-10 shadow-2xl bg-3 text-center">
                     <div className="my-auto">
                         <h2 className="text-2xl font-semibold tracking-tight">
                             Contact

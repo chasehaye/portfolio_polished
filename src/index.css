@@ -2,16 +2,12 @@
 @import 'tailwindcss';
 @theme {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
-
-
   --color-1: #E5E5EA;
   --color-2: #6E6E73;
-  --color-3: #6E6E73;
+  --color-3: #F5F5F7;
   --color-4: #CD7F32;
-  --color-5: #8C6239;
+  --color-5: #A1A1A6;
   --color-6: #6F4E37;
-  --color-7: white;
 }
 @custom-variant h-sm (@media (min-height: 670px));
 @custom-variant h-md (@media (min-height: 780px));
@@ -19,11 +15,8 @@
 @custom-variant h-xl (@media (min-height: 1060px));
 @custom-variant h-2xl (@media (min-height: 1280px));
 @custom-variant h-3xl (@media (min-height: 1570px));
-
 @layer utilities {
-  .no-scrollbar {
-    -webkit-overflow-scrolling: touch;
-  }
+
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -34,7 +27,11 @@
     -ms-overflow-style: none; 
   }
 }
-
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
 :root {
   --color-1: #E5E5EA;
   --color-2: #6E6E73;
@@ -42,11 +39,11 @@
   --color-4: #CD7F32;
   --color-5: #A1A1A6;
   --color-6: #6F4E37;
-  --color-7: red;
 }
-
 html {
   background-color: var(--color-1);
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 body {
   font-family: var(--font-sans);
