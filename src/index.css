@@ -9,12 +9,12 @@
   --color-5: #A1A1A6;
   --color-6: #6F4E37;
 }
-@custom-variant h-sm (@media (min-height: 670px));
-@custom-variant h-md (@media (min-height: 780px));
-@custom-variant h-lg (@media (min-height: 930px));
-@custom-variant h-xl (@media (min-height: 1060px));
-@custom-variant h-2xl (@media (min-height: 1280px));
-@custom-variant h-3xl (@media (min-height: 1570px));
+@custom-variant h-sm (@media (min-height: 780px));
+@custom-variant h-md (@media (min-height: 930px));
+@custom-variant h-lg (@media (min-height: 1130px));
+@custom-variant h-xl (@media (min-height: 1470px));
+@custom-variant h-2xl (@media (min-height: 1940px));
+
 @layer utilities {
 
 

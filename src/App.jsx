@@ -2,6 +2,7 @@ import { useState } from "react";
 import ContactModal from "./SubMenus/ContactModal";
 import AboutModal from "./SubMenus/AboutModal";
 import InquireModal from "./SubMenus/InquireModal";
+import iconLibrary from './data/iconLibrary.json';
 
 function App() {
 
@@ -9,32 +10,29 @@ function App() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isInquireOpen, setIsInquireOpen] = useState(false);
 
+
+
   const projects = [
-    { id: 1, name: "Net Anomaly Detector", year: "2025" },
-    { id: 2, name: "Hot Spot Identifier", year: "2025" },
-    { id: 3, name: "Insulin Data Clustering", year: "2025" },
-    { id: 4, name: "Project Alpha", year: "2025" },
-    { id: 5, name: "Quantum Path Optimizer", year: "2024" },
-    { id: 6, name: "Sentinel Vision API", year: "2024" },
-    { id: 7, name: "Neural Flow Engine", year: "2024" },
-    { id: 8, name: "Project Bravo", year: "2023" },
-    { id: 9, name: "Titan Ledger System", year: "2023" },
-    { id: 10, name: "Aether Signal Mesh", year: "2023" },
-    { id: 11, name: "Vector Search Core", year: "2023" },
-    { id: 12, name: "Distributed Lock Manager", year: "2023" },
-    { id: 13, name: "Async Event Pipeline", year: "2022" },
-    { id: 14, name: "Global State Sync", year: "2022" },
-    { id: 15, name: "Shadow Proxy Layer", year: "2022" },
-    { id: 16, name: "Project Gamma", year: "2022" },
-    { id: 17, name: "Kernel Metric Scraper", year: "2021" },
-    { id: 18, name: "Binary Stream Parser", year: "2021" },
-    { id: 19, name: "Hyperion Auth Gateway", year: "2021" },
-    { id: 20, name: "Void Storage Engine", year: "2021" },
+    { id: 1, name: "Portfolio V3", year: "2026", tech: [5,7,8,9,6] },
+    { id: 2, name: "Precision & Optics", year: "2026", tech: [0,4,3,2] },
+    { id: 3, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2,4] },
+    { id: 4, name: "Distributed Acc Sim", year: "2025", tech: [0,12] },
+    { id: 5, name: "CryptoFundamentals", year: "2025", tech: [13,14] },
+    { id: 6, name: "Hot Spot Identifier", year: "2025", tech: [15,16,18,17] },
+    { id: 7, name: "Insulin Data Clustering", year: "2025", tech: [0,3,2] },
+    { id: 8, name: "Image Classifier w/ NN", year: "2024", tech: [0,3,2,19] },
+    { id: 9, name: "AMM", year: "2024", tech: [21,20,0,5,7,8,9,6,26] },
+    { id: 10, name: "PathFinder", year: "2024", tech: [24,22,23,5,7,8,9,6,27] },
+    { id: 11, name: "Rig Draft", year: "2023", tech: [24,22,23,5,7,8,9,6,27] },
+    { id: 12, name: "Gear Box", year: "2023", tech: [21,20,0,25,8,9,6] },
+    { id: 13, name: "HSZ", year: "2023", tech: [24,22,23,25,8,9,6] },
   ];
+  
 
   return (
     <>
       <main className="lg:flex lg:flex-row-reverse lg:justify-end">
+        
 
         {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
         {isAboutOpen && <AboutModal onClose={() => setIsAboutOpen(false)} />}
@@ -67,19 +65,43 @@ function App() {
 
         <div 
           className="select-none mb-[3vh] mx-[6vw] mt-[18vh] 
-          h-sm:mt-[14vh] h-md:mt-[20vh] h-lg:mt-[17vh] h-xl:mt-[21vh] h-2xl:mt-[20vh] h-3xl:mt-[23vh] 
+          h-sm:mt-[23vh] h-md:mt-[20vh] h-lg:mt-[26vh] h-xl:mt-[24vh] h-2xl:mt-[23vh]
           lg:!mt-[10vh] lg:!mb-[10vh] lg:!ml-[10vw] lg:!text-sm"
         >
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="flex justify-between mt-[5vh] cursor-pointer"
-            >
-              <div className="font-semibold tracking-tight transition-all duration-300 group-hover:translate-x-1 lg:mr-4">
-                {project.name}
+              className="flex flex-col relative group cursor-pointer">
+              <div 
+                className="flex justify-between mt-[5vh] lg:my-[2.5vh]"
+              >
+                <div className="font-semibold tracking-tight transition-all duration-300 group-hover:translate-x-1 lg:mr-4">
+                  {project.name}
+                </div>
+                <div className="text-2 font-medium">
+                  {project.year}
+                </div>
               </div>
-              <div className="text-2 font-medium">
-                {project.year}
+
+              <div 
+                className="hidden lg:flex absolute bottom-0 left-0 mb-2 items-center">
+                {project.tech.map((iconIndex, idx) => {
+                  const icon = iconLibrary[iconIndex];
+                  if (!icon) return null;
+                  return (
+                    <div
+                      key={`${project.id}-${iconIndex}-${idx}`}
+                      className="w-4 h-4 inline-block mr-1 transition-opacity 
+                      duration-500 opacity-0 group-hover:opacity-100"
+                      style={{ 
+                        color: icon.color, 
+                        transitionDelay: `${idx * 150}ms` 
+                      }}
+                      dangerouslySetInnerHTML={{ __html: icon.svg }}
+                      title={icon.name}
+                      />
+                  );
+                })}
               </div>
             </div>
           ))}
