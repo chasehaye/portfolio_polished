@@ -1,16 +1,46 @@
-# React + Vite
+# Portfolio
+A minimal, high-performance personal portfolio built with React and Tailwind CSS. This site focuses on smooth user interactions, responsive design, and an organized project showcase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🛠️ Tech Stack
+Framework: React.js (Vite)
 
-Currently, two official plugins are available:
+Styling: Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Icons: Custom SVG Library (Lucide-based)
 
-## React Compiler
+Animations: CSS Transitions & Hover Groups
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✨ Key Features
+Staggered Tech Reveal: A custom-coded hover interaction that fades in project technology icons one-by-one using dynamic transition-delay.
 
-## Expanding the ESLint configuration
+Fully Responsive: Optimized for all screen sizes with specialized vertical height (h-sm, h-md) breakpoints for mobile devices.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Data-Driven: Projects and tech stacks are mapped from a central configuration file for easy updates.
+
+Performance First: Zero heavy animation libraries; used native CSS transitions for a lightweight footprint.
+
+📂 Project Structure
+src/components/ — Reusable UI elements (Project cards, Navigation).
+
+src/data/ — JSON/JS files containing project metadata and the SVG icon library.
+
+🚀 Setup
+Install dependencies:
+
+Bash
+npm install
+Run development server:
+
+Bash
+npm run dev
+Build for production:
+
+Bash
+npm run build
+
+-- One inefficeny that could be improved upon is code modularity
+when using the json file for icons the current implementation uses
+array index rather than the name of the technology. Since it is a 
+quick portfolio it is ok, but it would be more optimal to instead
+have the implementation use technologies names to more easily add
+new projects into the site in the future
