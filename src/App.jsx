@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { act, useState } from "react";
 import ContactModal from "./SubMenus/ContactModal";
 import AboutModal from "./SubMenus/AboutModal";
 import InquireModal from "./SubMenus/InquireModal";
+import ProjectContainer from "./ProjectInfo/ProjectContainer/ProjectContainer";
 import iconLibrary from './data/iconLibrary.json';
 
 function App() {
@@ -10,22 +11,28 @@ function App() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isInquireOpen, setIsInquireOpen] = useState(false);
 
+  
+  const [activeProject, setActiveProject] = useState(null);
 
+  const handleOpenProject = (projectName) => {
+    setActiveProject(prev => (prev === projectName ? null : projectName));
+  };
 
+  
   const projects = [
-    { id: 1, name: "Portfolio V3", year: "2026", tech: [5,7,8,9,6] },
-    { id: 2, name: "Precision & Optics", year: "2026", tech: [0,4,3,2] },
-    { id: 3, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2,4] },
-    { id: 4, name: "Distributed Acc Sim", year: "2025", tech: [0,12] },
-    { id: 5, name: "CryptoFundamentals", year: "2025", tech: [13,14] },
-    { id: 6, name: "Hot Spot Identifier", year: "2025", tech: [15,16,18,17] },
-    { id: 7, name: "Insulin Data Clustering", year: "2025", tech: [0,3,2] },
-    { id: 8, name: "Image Classifier w/ NN", year: "2024", tech: [0,3,2,19] },
-    { id: 9, name: "AMM", year: "2024", tech: [21,20,0,5,7,8,9,6,26] },
-    { id: 10, name: "PathFinder", year: "2024", tech: [24,22,23,5,7,8,9,6,27] },
-    { id: 11, name: "Rig Draft", year: "2023", tech: [24,22,23,5,7,8,9,6,27] },
-    { id: 12, name: "Gear Box", year: "2023", tech: [21,20,0,25,8,9,6] },
-    { id: 13, name: "HSZ", year: "2023", tech: [24,22,23,25,8,9,6] },
+    { id: 0, name: "Portfolio V3", year: "2026", tech: [5,7,8,9,6] },
+    { id: 1, name: "Precision & Optics", year: "2026", tech: [0,4,3,2] },
+    { id: 2, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2,4] },
+    { id: 3, name: "Distributed Acc Sim", year: "2025", tech: [0,12] },
+    { id: 4, name: "CryptoFundamentals", year: "2025", tech: [13,14] },
+    { id: 5, name: "Hot Spot Identifier", year: "2025", tech: [15,16,18,17] },
+    { id: 6, name: "Insulin Data Clustering", year: "2025", tech: [0,3,2] },
+    { id: 7, name: "Image Classifier w/ NN", year: "2024", tech: [0,3,2,19] },
+    { id: 8, name: "AMM", year: "2024", tech: [21,20,0,5,7,8,9,6,26] },
+    { id: 9, name: "PathFinder", year: "2024", tech: [24,22,23,5,7,8,9,6,27] },
+    { id: 10, name: "Rig Draft", year: "2023", tech: [24,22,23,5,7,8,9,6,27] },
+    { id: 11, name: "Gear Box", year: "2023", tech: [21,20,0,25,8,9,6] },
+    { id: 12, name: "HSZ", year: "2023", tech: [24,22,23,25,8,9,6] },
   ];
   
 
@@ -38,6 +45,8 @@ function App() {
         {isAboutOpen && <AboutModal onClose={() => setIsAboutOpen(false)} />}
         {isInquireOpen && <InquireModal onClose={() => setIsInquireOpen(false)} />}
 
+        {activeProject && <ProjectContainer onClose={() => setActiveProject(null)} project={activeProject} />}
+        
         <div 
           className="mt-[30vh] ml-[6vw] select-none touch-none 
           lg:fixed lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 
@@ -71,7 +80,9 @@ function App() {
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="flex flex-col relative group cursor-pointer">
+              className="flex flex-col relative group cursor-pointer"
+              onClick={() => handleOpenProject(project.name)}
+            >
               <div 
                 className="flex justify-between mt-[5vh] lg:my-[2.5vh]"
               >
