@@ -4,7 +4,7 @@ function DistributedAccSim(){
         <div className="relative h-full pt-8 select-none">
             <h2 className="text-md uppercase tracking-widest font-medium text-center">Distributed Account Simulation</h2>
             <div className="flex mx-4 mt-4 justify-between flex-col">
-                <div className="font-medium hidden h-md:block text-center">
+                <div className="font-medium  text-center">
                     This is a replicated banking system using gRPC, where multiple branches maintain 
                     consistent copies of a shared account. There is no central computer; instead, all 
                     machines in the system work together to ensure the system state is correct. The project 

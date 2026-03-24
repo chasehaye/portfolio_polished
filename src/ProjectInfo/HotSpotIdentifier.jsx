@@ -10,7 +10,7 @@ function HotSpotIdentifier(){
                     statistics and aggregation techniques to efficiently process large spatio-temporal datasets.
                 </div>
             </div>
-            <img src="/HotSpotIdentifier/nyc.png" className="rounded-lg m-auto mt-10 w-[80%] hidden sm:block" />
+            <img src="/HotSpotIdentifier/nyc.png" className="rounded-lg m-auto mt-10 w-[80%]" />
             <div 
                 onClick={() => window.open("https://github.com/chasehaye/HotSpotAnalysisTaxi", "_blank")}
                 className="cursor-pointer absolute bottom-0 left-1/2 -translate-x-1/2 mb-12 text-xs text-center"

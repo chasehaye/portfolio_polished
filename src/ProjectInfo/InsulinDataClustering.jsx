@@ -8,11 +8,11 @@ function InsulinDataClustering(){
                     <span>
                     This Python script processes continuous glucose monitoring and insulin intake data to extract features, then applies clustering algorithms like K-Means and DBSCAN to group meal responses and evaluate cluster quality using metrics such as SSE, entropy, and purity.
                     </span>
-                    <span className="hidden sm:inline">
+                    <span>
                     The goal is to analyze patterns in blood glucose response and categorize meal events based on observed glucose dynamics.
                     </span>
                 </div>
-                <img src="/InsulinDataClustering/insulin.png" className="w-80 m-auto pt-10 hidden sm:block"/>
+                <img src="/InsulinDataClustering/insulin.png" className="w-80 m-auto pt-10"/>
             </div>
             <div 
                 onClick={() => window.open("https://github.com/chasehaye/DistributedAccountSim", "_blank")}

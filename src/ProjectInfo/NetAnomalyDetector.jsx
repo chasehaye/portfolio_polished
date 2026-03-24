@@ -28,13 +28,13 @@ function NetAnomalyDetector({onClose, openInquireMenu}){
                     </div>
                     <img 
                         src="/NetAnomalyDetector/fnn.png"
-                        className="mt-6 hidden sm:block w-[80%] rounded-md m-auto"
+                        className="mt-6  w-[80%] rounded-md m-auto"
                     />
                 </div>
             </div>
             <div 
                 onClick={() => window.open("https://github.com/chasehaye/NetworkAnamolyDetector", "_blank")}
-                className="cursor-pointer absolute bottom-0 left-1/2 -translate-x-1/2 mb-12 text-xs text-center hidden h-sm:inline"
+                className="cursor-pointer absolute bottom-0 left-1/2 -translate-x-1/2 mb-12 text-xs text-center"
             >
                 See the GitHub for the <br/> FNN implementation</div>
         </div>

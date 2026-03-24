@@ -3,12 +3,8 @@ function CryptoFundamentals(){
     return(
         <div className="relative h-full pt-8 select-none">
             <h2 className="text-md uppercase tracking-widest font-medium text-center">Cryptology Fundamentals</h2>
-                <div className="block xs:hidden font-normal mx-6 mt-10 text-center text-[1.1rem]">
-                    Explored core cryptography concepts including steganography, hashing, Diffie-Hellman key exchange, and RSA encryption.
-                                        <img src="/CryptoFundamentals/crypt.png" className="w-20 m-auto mt-8"/>
-                </div>
-                <div className="font-medium mx-4 mt-4 flex flex-col justify-between h-[80%] hidden xs:block">
-                    <div className="hidden sm:block">
+                <div className="font-medium mx-4 mt-4 flex flex-col justify-between h-[80%]">
+                    <div>
                         <h2 className="font-bold">Steganography and Cryptanalysis</h2>
                         <div className="text-[0.9rem]">
                             Explored hiding and extracting messages at the byte level in bitmap images, withing C#. 
@@ -38,7 +34,7 @@ function CryptoFundamentals(){
                             Encrypted and decrypted messages while managing extremely large numeric values.
                         </div>
                     </div>
-                    <img src="/CryptoFundamentals/crypt.png" className="w-40 m-auto mt-2 hidden sm:block"/>
+                    <img src="/CryptoFundamentals/crypt.png" className="w-40 m-auto mt-2"/>
                 </div>
         </div>
     )
