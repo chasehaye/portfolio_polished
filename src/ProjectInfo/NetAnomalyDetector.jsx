@@ -4,7 +4,7 @@ function NetAnomalyDetector({onClose, openInquireMenu}){
         <div className="relative h-full pt-8 select-none">
             <h2 className="text-md uppercase tracking-widest font-medium text-center">Network Anomaly Detector</h2>
             <div className="flex mx-4 mt-4 justify-between">
-                <div className="font-medium">
+                <div className="font-medium text-center">
                     ML-based intrusion detection system
                     classifies abnormal network traffic using supervised learning on labeled datasets.
                     <div className="mt-4 sm:mt-10">

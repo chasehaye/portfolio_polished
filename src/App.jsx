@@ -14,25 +14,30 @@ function App() {
   
   const [activeProject, setActiveProject] = useState(null);
 
-  const handleOpenProject = (projectName) => {
-    setActiveProject(prev => (prev === projectName ? null : projectName));
+  const handleOpenProject = (project) => {
+    if(project.type === "card"){
+      setActiveProject(prev => (prev === project.name ? null : project.name));
+    }
+    if(project.type === "site"){
+      window.open(project.url, "_blank", "noopener,noreferrer");
+    }
   };
-
-  
+  // for future tech svg
+  // https://simpleicons.org
   const projects = [
-    { id: 0, name: "Portfolio V3", year: "2026", tech: [5,7,8,9,6] },
-    { id: 1, name: "Precision & Optics", year: "2026", tech: [0,4,3,2] },
-    { id: 2, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2] },
-    { id: 3, name: "Distributed Acc Sim", year: "2025", tech: [0,12] },
-    { id: 4, name: "CryptoFundamentals", year: "2025", tech: [13,14] },
-    { id: 5, name: "Hot Spot Identifier", year: "2025", tech: [15,16,18,17] },
-    { id: 6, name: "Insulin Data Clustering", year: "2025", tech: [0,3,2] },
-    { id: 7, name: "Image Classifier w/ NN", year: "2024", tech: [0,3,2,19] },
-    { id: 8, name: "AMM", year: "2024", tech: [21,20,0,5,7,8,9,6,26] },
-    { id: 9, name: "PathFinder", year: "2024", tech: [24,22,23,5,7,8,9,6,27] },
-    { id: 10, name: "Rig Draft", year: "2023", tech: [24,22,23,5,7,8,9,6,27] },
-    { id: 11, name: "Gear Box", year: "2023", tech: [21,20,0,25,8,9,6] },
-    { id: 12, name: "HSZ", year: "2023", tech: [24,22,23,25,8,9,6] },
+    { id: 0, name: "Portfolio V3", year: "2026", tech: [5,7,8,9,6], type: "card" },
+    { id: 1, name: "Precision & Optics", year: "2026", tech: [0,4,3,2], type: "card" },
+    { id: 2, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2], type: "card" },
+    { id: 3, name: "Distributed Acc Sim", year: "2025", tech: [0,12], type: "card" },
+    { id: 4, name: "CryptoFundamentals", year: "2025", tech: [13,14], type: "card" },
+    { id: 5, name: "Hot Spot Identifier", year: "2025", tech: [15,16,18,17,29], type: "card" },
+    { id: 6, name: "Insulin Data Clustering", year: "2025", tech: [0,3,2], type: "card" },
+    { id: 7, name: "Image Classifier w/ NN", year: "2024", tech: [0,3,2,19], type: "card" },
+    { id: 8, name: "AMM", year: "2024", tech: [21,20,0,5,7,8,9,6,26], type: "site", url:"https://github.com/stars/chasehaye/lists/amm" },
+    { id: 9, name: "PathFinder", year: "2024", tech: [24,22,23,5,7,8,9,6,27], type: "site", url:"https://github.com/chasehaye/PathFinder" },
+    { id: 10, name: "Rig Draft", year: "2023", tech: [24,22,23,5,7,8,9,6,27], type: "site", url:"https://github.com/chasehaye/RigDraft" },
+    { id: 11, name: "Gear Box", year: "2023", tech: [21,20,0,25,8,9,6], type: "site", url:"https://github.com/chasehaye/Gear-Box" },
+    { id: 12, name: "HSZ", year: "2023", tech: [24,22,23,25,8,9,6], type: "site", url:"https://github.com/chasehaye/FullStack_CRUD" },
   ];
   
 
@@ -81,7 +86,7 @@ function App() {
             <div 
               key={project.id}
               className="flex flex-col relative group cursor-pointer"
-              onClick={() => handleOpenProject(project.name)}
+              onClick={() => handleOpenProject(project)}
             >
               <div 
                 className="flex justify-between mt-[5vh] lg:my-[2.5vh]"

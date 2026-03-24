@@ -19,7 +19,7 @@ function PortfolioV3(){
             </svg>
 
             <h2 className="text-md uppercase tracking-widest font-medium text-center">Welcome</h2>
-            <h3 className="font-medium mt-4 sm:mt-45">
+            <h3 className="font-medium mt-4 sm:mt-45 text-center">
                 One of many iterations of my portfolio! This is the most polished
                 and formal version yet. Feel free to look around and see what is present.
                 It is adaptive to mobile and desktop. I recommend checking out the desktop version,

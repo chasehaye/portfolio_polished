@@ -4,7 +4,7 @@ function PrecisionOptics({onClose, openInquireMenu}){
         <div className="relative h-full pt-8 select-none">
             <h2 className="text-md uppercase tracking-widest font-medium text-center">Precision & Optics</h2>
             <div className="flex mx-4 mt-4 justify-between">
-                <div className="sm:w-40 font-medium">
+                <div className="sm:w-40 font-medium text-center sm:text-left">
                     This project focused on providing useful insights from adult demographic data for a company. 
                     In addition to the implementation, an in-depth report was written showing how the data could 
                     benefit their marketing endeavors. Some of the Python-generated figures can be seen here. The
