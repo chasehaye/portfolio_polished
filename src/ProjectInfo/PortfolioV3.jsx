@@ -1,5 +1,5 @@
 
-function PortfolioV3({onClose}){
+function PortfolioV3(){
     return(
         <div 
             className="p-10 px-12 relative h-full group cursor-pointer select-none" 

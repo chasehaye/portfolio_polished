@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react";
 import PortfolioV3 from "../PortfolioV3";
 import PrecisionOptics from "../PrecisionOptics";
+import NetAnomalyDetector from "../NetAnomalyDetector";
+import DistributedAccSim from "../DistributedAccSim";
+import CryptoFundamentals from "../CryptoFundamentals";
+
 // no spaces and no special chars
 const componentRegistry = {
     PortfolioV3: PortfolioV3,
-    PrecisionOptics: PrecisionOptics
+    PrecisionOptics: PrecisionOptics,
+    NetAnomalyDetector: NetAnomalyDetector,
+    DistributedAccSim: DistributedAccSim,
+    CryptoFundamentals: CryptoFundamentals
 };
 
-function ProjectContainer({onClose, project}) {
+function ProjectContainer({onClose, project, openInquireMenu}) {
     const slug = project.replace(/[^a-zA-Z0-9]/g, "");
     const SelectedProject = componentRegistry[slug];
-    console.log(slug)
 
     useEffect(() => {
         const originalStyle = window.getComputedStyle(document.body).overflow;
@@ -50,7 +56,7 @@ function ProjectContainer({onClose, project}) {
                 >
                     
                     {SelectedProject ? 
-                        <SelectedProject /> : 
+                        <SelectedProject onClose={onClose} openInquireMenu={openInquireMenu} /> : 
                         <span className="m-auto">Not Found</span>
                     }
                 </div>

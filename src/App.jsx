@@ -22,7 +22,7 @@ function App() {
   const projects = [
     { id: 0, name: "Portfolio V3", year: "2026", tech: [5,7,8,9,6] },
     { id: 1, name: "Precision & Optics", year: "2026", tech: [0,4,3,2] },
-    { id: 2, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2,4] },
+    { id: 2, name: "Net Anomaly Detector", year: "2025", tech: [10,0,11,1,3,2] },
     { id: 3, name: "Distributed Acc Sim", year: "2025", tech: [0,12] },
     { id: 4, name: "CryptoFundamentals", year: "2025", tech: [13,14] },
     { id: 5, name: "Hot Spot Identifier", year: "2025", tech: [15,16,18,17] },
@@ -45,7 +45,7 @@ function App() {
         {isAboutOpen && <AboutModal onClose={() => setIsAboutOpen(false)} />}
         {isInquireOpen && <InquireModal onClose={() => setIsInquireOpen(false)} />}
 
-        {activeProject && <ProjectContainer onClose={() => setActiveProject(null)} project={activeProject} />}
+        {activeProject && <ProjectContainer onClose={() => setActiveProject(null)} project={activeProject} openInquireMenu={() => setIsInquireOpen(true)} />}
         
         <div 
           className="mt-[30vh] ml-[6vw] select-none touch-none 
