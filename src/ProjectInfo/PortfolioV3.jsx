@@ -18,9 +18,9 @@ function PortfolioV3(){
             <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
 
-            <h2 className="text-md uppercase tracking-widest font-medium text-center">Welcome:</h2>
+            <h2 className="text-md uppercase tracking-widest font-medium text-center">Welcome</h2>
             <h3 className="font-medium mt-4 sm:mt-45">
-                To one of many iterations of my portfolio! This is the most polished
+                One of many iterations of my portfolio! This is the most polished
                 and formal version yet. Feel free to look around and see what is present.
                 It is adaptive to mobile and desktop. I recommend checking out the desktop version,
                 it has more polish and features.

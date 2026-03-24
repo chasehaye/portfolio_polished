@@ -4,6 +4,9 @@ import PrecisionOptics from "../PrecisionOptics";
 import NetAnomalyDetector from "../NetAnomalyDetector";
 import DistributedAccSim from "../DistributedAccSim";
 import CryptoFundamentals from "../CryptoFundamentals";
+import HotSpotIdentifier from "../HotSpotIdentifier";
+import InsulinDataClustering from "../InsulinDataClustering";
+import ImageClassifierwNN from "../ImageClassifierwNN";
 
 // no spaces and no special chars
 const componentRegistry = {
@@ -11,7 +14,10 @@ const componentRegistry = {
     PrecisionOptics: PrecisionOptics,
     NetAnomalyDetector: NetAnomalyDetector,
     DistributedAccSim: DistributedAccSim,
-    CryptoFundamentals: CryptoFundamentals
+    CryptoFundamentals: CryptoFundamentals,
+    HotSpotIdentifier: HotSpotIdentifier,
+    InsulinDataClustering: InsulinDataClustering,
+    ImageClassifierwNN: ImageClassifierwNN,
 };
 
 function ProjectContainer({onClose, project, openInquireMenu}) {
