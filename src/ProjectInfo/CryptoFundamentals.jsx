@@ -34,7 +34,7 @@ function CryptoFundamentals(){
                             Encrypted and decrypted messages while managing extremely large numeric values.
                         </div>
                     </div>
-                    <img src="/CryptoFundamentals/crypt.png" className="w-40 m-auto mt-2"/>
+                    <img src="/CryptoFundamentals/crypt.png" className="w-40 m-auto mt-2 hidden md:block"/>
                 </div>
         </div>
     )
