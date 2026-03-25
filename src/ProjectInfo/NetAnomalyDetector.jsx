@@ -28,7 +28,7 @@ function NetAnomalyDetector({onClose, openInquireMenu}){
                     </div>
                     <img 
                         src="/NetAnomalyDetector/fnn.png"
-                        className="mt-6  w-[80%] rounded-md m-auto"
+                        className="mt-6  w-[80%] rounded-md m-auto hidden sm:block"
                     />
                 </div>
             </div>
